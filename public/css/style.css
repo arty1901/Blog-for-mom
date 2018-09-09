@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
   background-color: #fff8ef;
@@ -209,6 +211,12 @@ h6 {
 
 /*Calendar styles*/
 
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .carousel-inner {
   margin-bottom: 30px;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
@@ -277,6 +285,12 @@ h6 {
   margin-bottom: 30px;
 }
 
+/*Widget block*/
+
+.widget-block {
+  border-left: 2px solid rgba(0, 0, 0, 0.4);
+}
+
 .widget-block > div {
   margin-bottom: 22px;
 }
@@ -285,7 +299,7 @@ h6 {
   text-transform: uppercase;
   font-size: 18px;
   line-height: 1;
-  background: #f6f6f6;
+  background: #00a79d;
   margin-bottom: 20px;
 }
 
@@ -294,9 +308,59 @@ h6 {
   padding-right: 10px;
 }
 
-.widget-block ul li {
+.widget-block #block_1 {
   font-size: 18px;
 }
+
+.widget-block #block_2 {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.widget-block #block_2 ul {
+  list-style: none;
+  padding: 0;
+  margin: -5px;
+}
+
+.widget-block #block_2 ul li {
+  width: 50%;
+  float: left;
+  padding: 5px;
+  /*--------Адаптивный квадртат. Формируется адаптивынй квадрат, который непонятно как работает*/
+}
+
+.widget-block #block_2 ul li .info_block {
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #00a79d;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  /*Адаптивный квадрат*/
+}
+
+.widget-block #block_2 ul li .info_block .content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.widget-block #block_2 ul li .info_block i {
+  display: inline-block;
+}
+
+.widget-block #block_2 ul li .info_block span {
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+}
+
+/*Widget block*/
 
 .news-block .pageHeading {
   display: -webkit-box;
@@ -416,58 +480,23 @@ h6 {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.info_block {
-  margin-bottom: 15px;
-}
+/*Useful links*/
 
-.info_block span {
-  text-align: center;
+.card .btn-link {
+  color: #00a79d;
+  text-transform: uppercase;
+  text-decoration: underline;
   font-size: 20px;
 }
 
-.info_block .container {
-  margin-bottom: 10px;
-}
-
-.info_block .container img {
-  margin-right: 10px;
-}
-
-.info_block .container label {
-  margin: 0;
-  font-size: 28px;
-  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
-}
-
-.link-block:nth-of-type(1) {
-  margin-bottom: 30px;
-}
-
-.book-block h3 {
-  display: inline-block;
-  height: 70px;
-  width: 100%;
-}
-
-.book-block .book-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.book-block .book-list li {
-  display: inline-block;
-  font-size: 24px;
-  line-height: 1;
-}
-
-.book-block .book-list li a {
+.card .book-list a {
   color: #00a79d;
   position: relative;
   text-decoration: none;
+  font-size: 18px;
 }
 
-.book-block .book-list li a:before {
+.card .book-list a:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -479,9 +508,11 @@ h6 {
   transition: .2s;
 }
 
-.book-block .book-list li a:hover:before {
+.card .book-list a:hover:before {
   width: 100%;
 }
+
+/*Useful links*/
 
 /*attestation page*/
 
@@ -513,7 +544,6 @@ h6 {
 /*contact me page*/
 
 .contact-form-block {
-  border: 2px solid #00a79d;
   padding: 20px;
 }
 
@@ -522,6 +552,7 @@ h6 {
   border: 2px solid #00a79d;
   background-color: white;
   color: #00a79d;
+  text-transform: uppercase;
   cursor: pointer;
   padding: 5px 10px;
   -webkit-transition: background-color .5s;
@@ -531,6 +562,16 @@ h6 {
 .contact-form-block form .button:hover {
   background-color: #00a79d;
   color: white;
+}
+
+.contact-form-block form label {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.contact-form-block form .form-control {
+  border: 2px solid #00a79d;
+  border-radius: 0;
 }
 
 /*contact me page*/

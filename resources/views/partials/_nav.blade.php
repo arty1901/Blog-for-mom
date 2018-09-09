@@ -20,7 +20,7 @@
                     <a class="nav-link" href="/about">Аттестация</a>
                 </li>
                 <li class="nav-item {{ Request::is('contact') ? "active" : "" }}">
-                    <a class="nav-link" href="/contact">Напишите мне</a>
+                    <a class="nav-link" href="/contact">Обратная связь</a>
                 </li>
             </ul>
             @auth

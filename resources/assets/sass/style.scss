@@ -183,6 +183,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 /*Calendar styles*/
 
+.clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
 .carousel-inner {
   margin-bottom: 30px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.03);
@@ -251,7 +259,9 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 30px;
 }
 
+/*Widget block*/
 .widget-block {
+  border-left: 2px solid $meta-color;
   > div {
     margin-bottom: 22px;
   }
@@ -259,20 +269,60 @@ h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
     font-size: 18px;
     line-height: 1;
-    background: #f6f6f6;
+    background: $common-color;
     margin-bottom: 20px;
     span {
       background: white;
       padding-right: 10px;
     }
   }
-  ul {
-    li {
-      font-size: 18px;
+  #block_1 {
+    font-size: 18px;
+  }
+  #block_2 {
+    padding: 0;
+    box-sizing: border-box;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: -5px;
+      li{
+        width: 50%;
+        float: left;
+        padding: 5px;
+        /*--------Адаптивный квадртат. Формируется адаптивынй квадрат, который непонятно как работает*/
+        //In some way it`s a magic
+        .info_block {
+          position: relative;
+          height: 0;
+          padding-bottom: 100%;
+          background-color: $common-color;
+          border-radius: 4px;
+          text-align: center;
+          overflow: hidden;
+          .content {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+          }
+          /*Адаптивный квадрат*/
+
+          i {
+            display: inline-block;
+          }
+          span {
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
     }
   }
-
 }
+/*Widget block*/
 
 .news-block {
   .pageHeading {
@@ -359,64 +409,37 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-.info_block {
-  margin-bottom: 15px;
-  span {
-    text-align: center;
+/*Useful links*/
+.card {
+  .btn-link {
+    color: $common-color;
+    text-transform: uppercase;
+    text-decoration: underline;
     font-size: 20px;
   }
-  .container {
-    margin-bottom: 10px;
-    img {
-      margin-right: 10px;
-    }
-    label {
-      margin: 0;
-      font-size: 28px;
-      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
-    }
-  }
-}
-
-.link-block:nth-of-type(1) {
-  margin-bottom: 30px;
-}
-
-.book-block {
-  h3 {
-    display: inline-block;
-    height: 70px;
-    width: 100%;
-  }
   .book-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      font-size: 24px;
-      line-height: 1;
-      a {
-        color: $common-color;
-        position: relative;
-        text-decoration: none;
-        &:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 3px;
-          width: 0;
-          background: $common-color;
-          transition: .2s;
-        }
-        &:hover:before {
-          width: 100%;
-        }
+    a {
+      color: $common-color;
+      position: relative;
+      text-decoration: none;
+      font-size: 18px;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background: $common-color;
+        transition: .2s;
+      }
+      &:hover:before {
+        width: 100%;
       }
     }
   }
 }
+/*Useful links*/
 
 /*attestation page*/
 .attestation-block {
@@ -443,7 +466,6 @@ h1,h2,h3,h4,h5,h6 {
 
 /*contact me page*/
 .contact-form-block {
-  border: 2px solid $common-color;
   padding: 20px;
   form {
     .button {
@@ -451,6 +473,7 @@ h1,h2,h3,h4,h5,h6 {
       border: 2px solid $common-color;
       background-color: white;
       color: $common-color;
+      text-transform: uppercase;
       cursor: pointer;
       padding: 5px 10px;
       transition: background-color .5s;
@@ -458,6 +481,14 @@ h1,h2,h3,h4,h5,h6 {
         background-color: $common-color;
         color: white;
       }
+    }
+    label {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    .form-control {
+      border: 2px solid $common-color;
+      border-radius: 0;
     }
   }
 }
