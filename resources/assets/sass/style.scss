@@ -290,8 +290,8 @@ h1,h2,h3,h4,h5,h6 {
         width: 50%;
         float: left;
         padding: 5px;
-        /*--------Адаптивный квадртат. Формируется адаптивынй квадрат, который непонятно как работает*/
-        //In some way it`s a magic
+        /*Адаптивный квадртат.
+        Нихуя непонятен принцип его создания, но работает каеф*/
         .info_block {
           position: relative;
           height: 0;
@@ -302,17 +302,16 @@ h1,h2,h3,h4,h5,h6 {
           overflow: hidden;
           .content {
             position: absolute;
-            top: 50%;
+            top: 25%;
             width: 100%;
           }
           /*Адаптивный квадрат*/
-
           i {
             display: inline-block;
           }
           span {
             text-align: center;
-            font-size: 12px;
+            font-size: 16px;
             color: #fff;
             display: inline-block;
             width: 100%;
@@ -442,6 +441,42 @@ h1,h2,h3,h4,h5,h6 {
 /*Useful links*/
 
 /*attestation page*/
+.attestation-table {
+  .table {
+    thead {
+      background-color: $common-color;
+      color: #FFF;
+      height: 40px;
+    }
+  }
+}
+
+.categories-tabs {
+  padding-left: 15px;
+  a {
+    background-color: #fff;
+    color: $common-color;
+    font-size: 18px;
+  }
+  .active {
+    background-color: $common-color !important;
+    color: white !important;
+  }
+}
+
+.category_1 {
+  .card-header {
+    a {
+      color: $common-color;
+      text-decoration: underline;
+      font-weight: 300;
+    }
+  }
+  h5 {
+    max-width: 100%;
+  }
+}
+
 .attestation-block {
   .category-block {
     margin-bottom: 40px;

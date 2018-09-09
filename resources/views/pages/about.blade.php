@@ -10,74 +10,70 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
-            <div class="container attestation-block">
-                <div class="container">
-                    <div class="container category-block">
-                        <h3>Достижения</h3>
-                        <div id="lightgallery_1" class="row justify-content-between">
-                            @for($i = 1;  $i <= 3; $i++ )
-                                <a href="images/project_images/attestation/rewards/{{ $i }}.jpg">
-                                    <div class="col-md-4">
-                                        <img src="images/project_images/attestation/rewards/{{ $i }}.jpg"/>
-                                    </div>
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
+            <div class="container attestation-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">№</th>
+                            <th scope="col">Наименование</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Чайбар Лариса Лангыевна</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Высшее образование, ГОУ ВПО "Хакасский государственный университет им. Н.Ф. Катанова", 2006г.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>ГБОУ РТ "СОШ №10 для детей с ОВЗ"</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Педагог-психолог, учитель индивидуального обучения</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Общий стаж - 31год, стаж педагогической работы - 30 лет</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>5 лет</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>1 категория, Приказ МОН №____ от ____</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Высшая категория</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                    <div class="container category-block">
-                        <h3>Профессиональный рост педагога</h3>
-                        <div id="lightgallery_2" class="row justify-content-between">
-                            @for($i = 1;  $i <= 5; $i++ )
-                                <a href="images/project_images/attestation/qualification/{{ $i }}.jpg">
-                                    <div class="col-md-4">
-                                        <img src="images/project_images/attestation/qualification/{{ $i }}.jpg"/>
-                                    </div>
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
-
-                    <div class="container category-block">
-                        <h3>Обобщение и распространение педагогического опыта в рамках курсов повышения квалификации: открытые уроки, мастер-классы</h3>
-                        <div id="lightgallery_3" class="row justify-content-between">
-                            @for($i = 1;  $i <= 11; $i++ )
-                                <a href="images/project_images/attestation/lection/{{ $i }}.jpg">
-                                    <div class="col-md-4">
-                                        <img src="images/project_images/attestation/lection/{{ $i }}.jpg"/>
-                                    </div>
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
-
-                    <div class="container category-block">
-                        <h3>Экспертная деятельность</h3>
-                        <div id="lightgallery_4" class="row justify-content-between">
-                            @for($i = 1;  $i <= 4; $i++ )
-                                <a href="images/project_images/attestation/expert/{{ $i }}.jpg">
-                                    <div class="col-md-4">
-                                        <img src="images/project_images/attestation/expert/{{ $i }}.jpg"/>
-                                    </div>
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
-
-                    <div class="container category-block">
-                        <h3>Выступления на научно-практических конференциях, педагогических чтениях, фестивалях</h3>
-                        <div id="lightgallery_5" class="row justify-content-between">
-                            @for($i = 1;  $i <= 8; $i++ )
-                                <a href="images/project_images/attestation/conferation/{{ $i }}.jpg">
-                                    <div class="col-md-4">
-                                        <img src="images/project_images/attestation/conferation/{{ $i }}.jpg"/>
-                                    </div>
-                                </a>
-                            @endfor
-                        </div>
+            <ul class="nav nav-pills mb-3 categories-tabs" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">1.Продуктивность психолого-педагогического сопровождения образовательного процесса</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">2.Продуктивность личного вклада педагогического работника в повышение качества образования</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="container">
+                        @include('partials._attestationCategory')
                     </div>
                 </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    @include('partials._attestationGallery')
+                </div>
             </div>
+
         </div>
         @include('partials._widget')
     </div>

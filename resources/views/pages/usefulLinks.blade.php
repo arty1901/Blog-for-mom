@@ -1,10 +1,9 @@
 @extends('main')
 
-@section('title', '| Useful Links')
+@section('title', '| Полезные ссылки')
 
 @section('content')
 
-    <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <h1>Полезные ссылки</h1>
@@ -92,7 +91,6 @@
             </div>
             @include('partials._widget')
         </div>
-    </div>
 @stop
 
 @section('script')

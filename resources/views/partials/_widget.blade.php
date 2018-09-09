@@ -48,7 +48,7 @@
     <div class="container" id="cal">
         <div class="header">
             <span class="left button" id="prev"> &lang; </span>
-            <span class="month-year" id="label"> June 20&0 </span>
+            <span class="month-year" id="label"> </span>
             <span class="right button" id="next"> &rang; </span>
         </div>
         <table id="days">

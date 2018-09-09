@@ -328,7 +328,8 @@ h6 {
   width: 50%;
   float: left;
   padding: 5px;
-  /*--------Адаптивный квадртат. Формируется адаптивынй квадрат, который непонятно как работает*/
+  /*Адаптивный квадртат.
+        Нихуя непонятен принцип его создания, но работает каеф*/
 }
 
 .widget-block #block_2 ul li .info_block {
@@ -344,7 +345,7 @@ h6 {
 
 .widget-block #block_2 ul li .info_block .content {
   position: absolute;
-  top: 50%;
+  top: 25%;
   width: 100%;
 }
 
@@ -354,7 +355,7 @@ h6 {
 
 .widget-block #block_2 ul li .info_block span {
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   color: #fff;
   display: inline-block;
   width: 100%;
@@ -515,6 +516,37 @@ h6 {
 /*Useful links*/
 
 /*attestation page*/
+
+.attestation-table .table thead {
+  background-color: #00a79d;
+  color: #FFF;
+  height: 40px;
+}
+
+.categories-tabs {
+  padding-left: 15px;
+}
+
+.categories-tabs a {
+  background-color: #fff;
+  color: #00a79d;
+  font-size: 18px;
+}
+
+.categories-tabs .active {
+  background-color: #00a79d !important;
+  color: white !important;
+}
+
+.category_1 .card-header a {
+  color: #00a79d;
+  text-decoration: underline;
+  font-weight: 300;
+}
+
+.category_1 h5 {
+  max-width: 100%;
+}
 
 .attestation-block .category-block {
   margin-bottom: 40px;
