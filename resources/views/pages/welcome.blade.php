@@ -38,8 +38,8 @@
 
         {{--Newest posts--}}
         <div class="row">
-            <div class="col-8 news-block">
-                <div class="container pageHeading">
+            <div class="col-12 col-sd-12 col-md-8 news-block">
+                <div class="pageHeading">
                     <h2 class="pageHeading-title">Новые записи</h2>
                     <span><i class="far fa-calendar-alt"></i> {{ date('l, F jS, Y') }}</span>
                 </div>
@@ -51,7 +51,7 @@
                                 <div class="post">
                                     <div class="container post-header">
                                         <a href="{{ url('blog/'.$post->slug) }}"><h3>{{ $post->title }}</h3></a>
-                                        <span>Создан: {{date('M j, Y', strtotime($post->updated_at))}}</span>
+                                        <small class="text-muted">Создан: {{date('M j, Y', strtotime($post->updated_at))}}</small>
                                     </div>
                                     <div class="post-content">
                                         <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
@@ -59,7 +59,7 @@
                                     <hr>
                                     <div class="container post-meta">
                                         <a href="{{ url('blog/'.$post->slug) }}">Читать далее <i class="fas fa-chevron-right"></i></a>
-                                        <span><i class="far fa-comment"></i> {{ $post->comments()->count() }}
+                                        <small class="text-muted"><i class="far fa-comment"></i> {{ $post->comments()->count() }}
                                             @switch($post->comments()->count())
                                                 @case(1)
                                                     Комментарий
@@ -72,7 +72,7 @@
                                                 @default
                                                     Комментариев
                                                 @endswitch
-                                        </span>
+                                        </small>
                                     </div>
                                 </div>
                             </article>

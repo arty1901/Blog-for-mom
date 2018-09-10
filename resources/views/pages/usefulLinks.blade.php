@@ -4,10 +4,13 @@
 
 @section('content')
 
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Полезные ссылки</h1>
+        </div>
+    </div>
         <div class="row">
             <div class="col-md-8">
-                <h1>Полезные ссылки</h1>
-                <hr>
                 <div class="accordion" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="headingOne">
