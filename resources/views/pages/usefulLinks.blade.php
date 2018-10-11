@@ -1,17 +1,16 @@
 @extends('main')
 
-@section('title', '| Полезные ссылки')
+@section('title', '| Методическая копилка')
 
 @section('content')
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Полезные ссылки</h1>
+            <h1>Методическая копилка</h1>
         </div>
     </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="accordion" id="accordionExample">
+        <div class="row gap-grid">
+                <div class="accordion useful-links" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
@@ -91,7 +90,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             @include('partials._widget')
         </div>
 @stop

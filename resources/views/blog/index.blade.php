@@ -10,8 +10,7 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-8">
+    <div class="row gap-grid">
             <div class="card-columns">
             @foreach($posts as $post)
                     <div class="card">
@@ -30,11 +29,8 @@
                     </div>
                 @endforeach
             </div>
-        </div>
         @include('partials._widget')
     </div>
-
-
 
     <div class="row">
         <div class="col-md-12">

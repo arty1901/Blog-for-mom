@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
                     <a class="nav-link" href="/blog">Блог</a>
                 </li>
                 <li class="nav-item {{ Request::is('usefulLinks') ? "active" : "" }}">
-                    <a class="nav-link" href="/usefulLinks">Полезные ссылки</a>
+                    <a class="nav-link" href="/usefulLinks">Методическая копилка</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? "active" : "" }}">
                     <a class="nav-link" href="/about">Аттестация</a>
@@ -23,26 +23,54 @@
                     <a class="nav-link" href="/contact">Обратная связь</a>
                 </li>
             </ul>
-            @auth
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello, admin!
-                        </a>
-                        <div class="dropdown-menu" id="auth_dropdown" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
-                            <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Catefories') }}</a>
-                            <a class="dropdown-item" href="{{ route('tags.index') }}">{{ __('Tags') }}</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                Log out
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                @csrf
-                            </form>
-                        </div>
+            @guest
+                <ul class="navbar-nav navbar-right auth-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Войти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Регистрация</a>
                     </li>
                 </ul>
+            @endguest
+            @auth()
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hello, admin!
+                            </a>
+                            <div class="dropdown-menu" id="auth_dropdown" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
+                                <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Catefories') }}</a>
+                                <a class="dropdown-item" href="{{ route('tags.index') }}">{{ __('Tags') }}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    Log out
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hello, {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu" id="auth_dropdown" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/profile">Профиль</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    Выход
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
             @endauth
         </div>
     </div>

@@ -6,20 +6,20 @@
     </head>
 
     <body>
-            <div class="container shadow-box">
-            @include('partials._nav')
+    @include('partials._nav')
 
-            <div class="container main_content">
-                @include('partials._messages')
+    <div class="container main_content">
+        @include('partials._messages')
 
-                @yield('content')
+        @yield('content')
 
-                @include('partials._footer')
+        @include('partials._footer')
+    </div>
 
-            </div><!-- End of .container-->
-            </div>
-        @include('partials._javaScripts')
+    @yield('additional_content')
 
-        @yield('scripts')
+    @include('partials._javaScripts')
+
+    @yield('scripts')
     </body>
 </html>

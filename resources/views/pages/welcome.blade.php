@@ -24,6 +24,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
         <div class="row profile_block">
             <div class="col-4">
                 <img src="images/project_images/profile_image.png" height="200px" width="200px" alt="" class="rounded mx-auto d-block">
@@ -37,8 +38,8 @@
         </div>
 
         {{--Newest posts--}}
-        <div class="row">
-            <div class="col-12 col-sd-12 col-md-8 news-block">
+        <div class="gap-grid row">
+            <div class="news-block">
                 <div class="pageHeading">
                     <h2 class="pageHeading-title">Новые записи</h2>
                     <span><i class="far fa-calendar-alt"></i> {{ date('l, F jS, Y') }}</span>
@@ -82,7 +83,7 @@
             </div>
             @include('partials._widget')
         </div>
-    @endsection
+@endsection
 
 @section('scripts')
 

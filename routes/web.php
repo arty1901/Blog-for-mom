@@ -34,11 +34,14 @@ Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' 
 
 Route::get('/blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('/blog', ['uses' => 'Blogcontroller@getIndex', 'as' => 'blog.index']);
+
 Route::get('/contact', 'PagesController@getContact');
 Route::post('/contact', 'PagesController@postContact');
 Route::get('/about', 'PagesController@getAbout');
 Route::get('/usefulLinks', 'PagesController@getUsefulLinks');
 Route::get('/', 'PagesController@getIndex');
 Route::resource('posts', 'PostController');
+
+Route::get('/profile', 'ProfileController@profile');
 
 Auth::routes();

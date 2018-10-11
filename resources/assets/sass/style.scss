@@ -1,9 +1,10 @@
-$navbar_height: 75px;
+$navbar_height: 60px;
 $common-color: #00a79d;
 $background-color: #fff8ef;
 $box-shadow-color: #999;
 $meta-color: rgba(0,0,0,0.4);
 $attestation_photo_width: 160px;
+$bottom-space: 25px;
 
 body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
@@ -15,22 +16,15 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-.shadow-box {
-  box-shadow: 4px 0 8px $box-shadow-color, -3px 0 6px $box-shadow-color;
-  padding: 0;
-}
-
 .main_content {
-  background: white;
+  padding: 0;
   padding-top: 20px;
   height: 100%;
-  ;
 }
 
 .navbar {
-  .container {
-    background-color: white;
-  }
+  background-color: white;
+  height: 60px;
   @media screen and (min-width: 768px){
     padding: 0;
   }
@@ -40,18 +34,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .main_menu {
-  display: flex;
-  justify-content: space-between;
   margin: 0;
   width: 100%;
   height: $navbar_height;
   li {
+    margin-right: 5px;
     .nav-link {
       @media screen and (min-width: 992px) {
-        font-size: 28px;
+        font-size: 22px;
       }
       @media screen and (max-width: 991px) {
-        font-size: 20px;
+        font-size: 14px;
       }
       font-weight: 400;
       text-transform: uppercase;
@@ -76,6 +69,22 @@ h1,h2,h3,h4,h5,h6 {
       &:hover:before {
         height: 3px;
       }
+    }
+  }
+  .active {
+    border-bottom: 3px solid $common-color;
+  }
+}
+
+.auth-menu {
+  .nav-link {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color .2s ease-out;
+    &:hover {
+      background-color: #ededed;
     }
   }
 }
@@ -191,6 +200,10 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
+#carouselExampleControls {
+  margin-bottom: $bottom-space;
+}
+
 .carousel-inner {
   margin-bottom: 30px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.03);
@@ -256,7 +269,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .profile_block {
+  margin-bottom: $bottom-space;
+  box-sizing: content-box;
+  padding: 20px;
+  margin: 0;
   margin-bottom: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 /*Read more link*/
@@ -296,9 +317,19 @@ h1,h2,h3,h4,h5,h6 {
 }
 /*Read more link*/
 
+.gap-grid {
+  display: grid;
+  grid-template-columns: 68% auto;
+  grid-gap: $bottom-space;
+  margin: 0;
+}
+
 /*Widget block*/
 .widget-block {
-  border-left: 2px solid $meta-color;
+  padding: 15px;
+  padding-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
   > div {
     margin-bottom: 22px;
   }
@@ -363,6 +394,9 @@ h1,h2,h3,h4,h5,h6 {
 
 /*Welcome page*/
 .news-block {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
   .pageHeading {
     display: flex;
     flex-direction: row;
@@ -426,6 +460,11 @@ h1,h2,h3,h4,h5,h6 {
 
 /*Blog page*/
 .card-columns {
+  padding: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
   @media (max-width: 767px) {
     column-count: 1;
   }
@@ -464,31 +503,38 @@ h1,h2,h3,h4,h5,h6 {
 /*Blog page*/
 
 /*Useful links*/
-.card {
-  .btn-link {
-    color: $common-color;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-size: 20px;
-  }
-  .book-list {
-    a {
+.useful-links {
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 15px;
+  .card {
+    .btn-link {
       color: $common-color;
-      position: relative;
-      text-decoration: none;
-      font-size: 18px;
-      &:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        width: 0;
-        background: $common-color;
-        transition: .2s;
-      }
-      &:hover:before {
-        width: 100%;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-size: 20px;
+    }
+    .book-list {
+      a {
+        color: $common-color;
+        position: relative;
+        text-decoration: none;
+        font-size: 18px;
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          width: 0;
+          background: $common-color;
+          transition: .2s;
+        }
+        &:hover:before {
+          width: 100%;
+        }
       }
     }
   }
@@ -496,6 +542,12 @@ h1,h2,h3,h4,h5,h6 {
 /*Useful links*/
 
 /*attestation page*/
+.attestation {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 15px;
+}
+
 .attestation-table {
   .table {
     thead {
@@ -532,6 +584,10 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
+.tab-pane {
+  padding: 0;
+}
+
 .attestation-block {
   .category-block {
     margin-bottom: 40px;
@@ -544,8 +600,6 @@ h1,h2,h3,h4,h5,h6 {
         display: inline-block;
         margin-bottom: 10px;
         img {
-          border: 4px solid $common-color;
-          border-radius: 10px;
           width: $attestation_photo_width;
         }
       }
@@ -556,8 +610,12 @@ h1,h2,h3,h4,h5,h6 {
 
 /*contact me page*/
 .contact-form-block {
-  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 40px 0;
   form {
+    margin: 0 auto;
+    width: 400px;
     .button {
       display: inline-block;
       border: 2px solid $common-color;
@@ -583,3 +641,59 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 /*contact me page*/
+
+/*Profile Page*/
+.profile_page {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  img {
+    height: 150px;
+    width: 150px;
+    margin-right: 25px;
+    border-radius: 50%;
+    float: left;
+  }
+}
+/*Profile Page*/
+
+/*Popup Table (lesson 1)*/
+.lessons-tasks {
+  padding-left: 0;
+}
+
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 1440px;
+    }
+  }
+
+.table-lesson {
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.td-1 {
+  width: 20%;
+}
+
+.td-2 {
+  width: 60%;
+}
+.td-3 {
+  width: 20%;
+}
+
+#relax-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    &:nth-of-type(even) {
+      margin-left: 7px;
+    }
+  }
+}
+/*Popup Table (lesson 1)*/

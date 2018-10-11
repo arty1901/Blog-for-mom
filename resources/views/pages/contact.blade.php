@@ -5,8 +5,8 @@
 @section('content')
     <div class="row justify-content-center">
 
-        <div class="col-md-5 contact-form-block">
-            <h1>Обратная связь</h1>
+        <div class="col-md-7 contact-form-block">
+            <h1 class="text-center">Обратная связь</h1>
             <hr>
                 <form action="{{ url('contact') }}" method="post">
                     {{ csrf_field() }}

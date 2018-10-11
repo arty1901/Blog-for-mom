@@ -1,4 +1,4 @@
-<div class="col-md-4 widget-block">
+<div class="widget-block">
     <div class="container" id="block_1">
         <h4 class="widget-title"><span>Направления работы</span></h4>
         <ul class="list-group list-group-flush">

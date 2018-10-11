@@ -13,9 +13,9 @@
             <h1>Аттестационная страница</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="container attestation-table">
+    <div class="row gap-grid">
+        <div class="attestation">
+            <div class="attestation-table">
                 <table class="table">
                     <thead>
                         <tr>
@@ -34,27 +34,29 @@
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>ГБОУ РТ "СОШ №10 для детей с ОВЗ"</td>
+                            <td>ГБОУ РТ "СОШ №10 для детей с ОВЗ".</td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
-                            <td>Педагог-психолог, учитель индивидуального обучения</td>
+                            <td>Педагог-психолог, учитель индивидуального обучения.</td>
                         </tr>
                         <tr>
                             <th scope="row">5</th>
-                            <td>Общий стаж - 31год, стаж педагогической работы - 30 лет</td>
+                            <td>Общий стаж - 31год, стаж педагогической работы - 30 лет.</td>
                         </tr>
                         <tr>
                             <th scope="row">6</th>
-                            <td>5 лет</td>
+                            <td>5 лет.</td>
                         </tr>
                         <tr>
                             <th scope="row">7</th>
-                            <td>1 категория, Приказ МОН №____ от ____</td>
+                            <td>Первая категория, Приказ МОН РТ №1251-д от 31.10.2014г.
+                                "Об установлении соответствия уровня квалификации требованиям,
+                                предъявляемым в первой, высшей квалификационной категории"</td>
                         </tr>
                         <tr>
                             <th scope="row">8</th>
-                            <td>Высшая категория</td>
+                            <td>Высшая категория.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -70,15 +72,12 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <div class="container">
-                        @include('partials._attestationCategory')
-                    </div>
+                    @include('partials._attestationCategory')
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     @include('partials._attestationGallery')
                 </div>
             </div>
-
         </div>
         @include('partials._widget')
     </div>
@@ -86,33 +85,6 @@
 
 @section('scripts')
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/lightgallery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
-    <script src="js/lg-thumbnail.min.js"></script>
-    <script src="js/lg-fullscreen.min.js"></script>
-    <script src="js/lg-hash.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#lightgallery_1").lightGallery({
-                galleryId: 1
-            });
-            $("#lightgallery_2").lightGallery({
-                galleryId: 2
-            });
-            $("#lightgallery_3").lightGallery({
-                galleryId: 3
-            });
-            $("#lightgallery_4").lightGallery({
-                galleryId: 4
-            });
-            $("#lightgallery_5").lightGallery({
-                galleryId: 5
-            });
-
-        });
-    </script>
 @endsection

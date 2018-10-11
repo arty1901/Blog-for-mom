@@ -1,4 +1,4 @@
-<div class="container attestation-block">
+<div class="attestation-block">
         <div class="container category-block">
             <h3>Достижения</h3>
             <div id="lightgallery_1" class="row justify-content-between">
@@ -64,3 +64,4 @@
             </div>
         </div>
 </div>
+
