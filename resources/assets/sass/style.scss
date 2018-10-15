@@ -8,7 +8,7 @@ $bottom-space: 25px;
 
 body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
-  background-color: $background-color;
+  background-color: #fff;
   background-image: url("../images/subtle_white_mini_waves.png");
 }
 
@@ -24,67 +24,88 @@ h1,h2,h3,h4,h5,h6 {
 
 .navbar {
   background-color: white;
-  height: 60px;
-  @media screen and (min-width: 768px){
-    padding: 0;
+  @media screen and (min-width: 992px){
+    height: 60px;
+    .navbar-brand {
+      display: none;
+    }
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
     padding: 10px 15px;
   }
 }
 
 .main_menu {
-  margin: 0;
-  width: 100%;
-  height: $navbar_height;
+  @media screen and (min-width: 992px){
+    height: $navbar_height;
+    margin: 0;
+    width: 75%;
+  }
   li {
     margin-right: 5px;
     .nav-link {
       @media screen and (min-width: 992px) {
+        font-weight: 400;
+        text-transform: uppercase;
+        display: inline-block;
+        height: $navbar_height;
+        line-height: $navbar_height;
+        vertical-align: center;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        color: $common-color !important;
+        &:before {
+          content: '';
+          position: absolute;
+          height: 0;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          background: $common-color;
+          transition: .1s;
+        }
+        &:hover:before {
+          height: 3px;
+        }
+        .active {
+          border-bottom: 3px solid $common-color;
+        }
+      }
+      @media screen and (min-width: 1200px) {
         font-size: 22px;
       }
-      @media screen and (max-width: 991px) {
-        font-size: 14px;
+      @media screen and (max-width: 1199px) {
+        font-size: 18px;
       }
-      font-weight: 400;
-      text-transform: uppercase;
-      display: inline-block;
-      height: $navbar_height;
-      line-height: $navbar_height;
-      vertical-align: center;
-      position: relative;
-      margin: 0;
-      padding: 0;
-      color: $common-color !important;
-      &:before {
-        content: '';
-        position: absolute;
-        height: 0;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        background: $common-color;
-        transition: .1s;
-      }
-      &:hover:before {
-        height: 3px;
-      }
+
     }
-  }
-  .active {
-    border-bottom: 3px solid $common-color;
   }
 }
 
 .auth-menu {
-  .nav-link {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-right: 5px;
-    transition: background-color .2s ease-out;
-    &:hover {
-      background-color: #ededed;
+  &-logout{
+    @media screen {
+      @media (min-width: 992px) {
+        .nav-link {
+          display: inline-block;
+          padding: 5px 10px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          margin-right: 5px;
+          transition: background-color .2s ease-out;
+          &:hover {
+            background-color: #ededed;
+          }
+        }
+      }
+    }
+
+  }
+  &-login {
+    @media screen and (min-width: 992px){
+      width: 11%;
     }
   }
 }
@@ -200,6 +221,23 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
+.block-common-style {
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+}
+
+.pages-header {
+  margin-left: 0;
+  margin-right: 0;
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+  }
+}
+
 #carouselExampleControls {
   margin-bottom: $bottom-space;
 }
@@ -212,10 +250,6 @@ h1,h2,h3,h4,h5,h6 {
 
 -h1-spacing{
   margin-top: 18px;
-}
-
-.form-spacing-top{
-  margin-top: 30px;
 }
 
 .comment {
@@ -269,15 +303,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .profile_block {
+  margin: 0;
   margin-bottom: $bottom-space;
   box-sizing: content-box;
-  padding: 20px;
-  margin: 0;
-  margin-bottom: 30px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  background-color: #fff;
+  img {
+    height: 200px;
+    width: 200px;
+  }
 }
 
 /*Read more link*/
@@ -559,7 +591,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .categories-tabs {
-  padding-left: 15px;
   a {
     background-color: #fff;
     color: $common-color;
@@ -571,7 +602,7 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-.category_1 {
+.category {
   .card-header {
     a {
       color: $common-color;
@@ -606,67 +637,17 @@ h1,h2,h3,h4,h5,h6 {
     }
   }
 }
-/*attestation page*/
-
-/*contact me page*/
-.contact-form-block {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 40px 0;
-  form {
-    margin: 0 auto;
-    width: 400px;
-    .button {
-      display: inline-block;
-      border: 2px solid $common-color;
-      background-color: white;
-      color: $common-color;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 5px 10px;
-      transition: background-color .5s;
-      &:hover {
-        background-color: $common-color;
-        color: white;
-      }
-    }
-    label {
-      text-transform: uppercase;
-      font-size: 16px;
-    }
-    .form-control {
-      border: 2px solid $common-color;
-      border-radius: 0;
-    }
-  }
-}
-/*contact me page*/
-
-/*Profile Page*/
-.profile_page {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  img {
-    height: 150px;
-    width: 150px;
-    margin-right: 25px;
-    border-radius: 50%;
-    float: left;
-  }
-}
-/*Profile Page*/
 
 /*Popup Table (lesson 1)*/
 .lessons-tasks {
   padding-left: 0;
 }
 
-  @media (min-width: 576px) {
-    .modal-dialog {
-      max-width: 1440px;
-    }
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 1440px;
   }
+}
 
 .table-lesson {
   font-size: 16px;
@@ -697,3 +678,66 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 /*Popup Table (lesson 1)*/
+#carousel {
+  margin-top: 15px;
+}
+/*attestation page*/
+
+/*contact me page*/
+.contact-form-block {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px 0 40px 0;
+  form {
+    margin: 0 auto;
+    width: 400px;
+    .button {
+      display: inline-block;
+      border: 2px solid $common-color;
+      background-color: white;
+      color: $common-color;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: background-color .5s;
+      &:hover {
+        background-color: $common-color;
+        color: white;
+      }
+    }
+    label {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    .form-control {
+      border: 2px solid $common-color;
+      border-radius: 0;
+    }
+  }
+}
+/*contact me page*/
+
+.index_post_header {
+  h1 {
+    margin: 0;
+  }
+  .col-md-2 {
+    display: flex;
+    a {
+      margin: auto;
+    }
+    form {
+      display: flex;
+      width: 100%;
+      input[type=submit] {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.well {
+  input[type=submit] {
+    margin-top: 10px;
+  }
+}

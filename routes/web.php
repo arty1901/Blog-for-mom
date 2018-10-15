@@ -42,6 +42,4 @@ Route::get('/usefulLinks', 'PagesController@getUsefulLinks');
 Route::get('/', 'PagesController@getIndex');
 Route::resource('posts', 'PostController');
 
-Route::get('/profile', 'ProfileController@profile');
-
 Auth::routes();

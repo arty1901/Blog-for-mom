@@ -1,18 +1,18 @@
 @extends('main')
 
-@section('title', '| All Categories')
+@section('title', '| Все категории')
 
 @section('content')
 
-    <div class="row">
-        <div class="col-md-8">
-            <h1>Categories</h1>
+    <div class="row block-common-style">
+        <div class="col-md-9">
+            <h1>Категории</h1>
 
             <table class="table">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Категория</th>
                     </tr>
                 </thead>
 
@@ -30,11 +30,11 @@
         <div class="col-md-3">
             <div class="well">
                 {!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
-                <h2>New category</h2>
-                {!! Form::label('name', 'Name:') !!}
+                <h2>Новая категория</h2>
+                {!! Form::label('name', 'Название категории:') !!}
                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
 
-                {!! Form::submit('Create New Category', ['class' => 'btn btn-success btn-block']) !!}
+                {!! Form::submit('Создать новую категорию', ['class' => 'btn btn-success btn-block']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

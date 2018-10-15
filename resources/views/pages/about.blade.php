@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-    <div class="row">
+    <div class="row block-common-style pages-header">
         <div class="col-md-12">
             <h1>Аттестационная страница</h1>
         </div>
@@ -72,19 +72,13 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    @include('partials._attestationCategory')
+                    @include('partials._attestationCategoryOne')
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    @include('partials._attestationGallery')
+                    @include('partials._attestationCategoryTwo')
                 </div>
             </div>
         </div>
         @include('partials._widget')
     </div>
-@endsection
-
-@section('scripts')
-
-
-
 @endsection

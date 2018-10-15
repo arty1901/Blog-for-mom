@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="row">
+    <div class="row block-common-style pages-header">
         <div class="col-md-12 col-md-offset-2">
             <h1>Blog</h1>
         </div>

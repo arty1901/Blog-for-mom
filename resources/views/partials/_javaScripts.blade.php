@@ -17,7 +17,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#lightgallery_1").lightGallery({
-            galleryId: 1
+            galleryId: 1,
+            thumbnail:true
         });
         $("#lightgallery_2").lightGallery({
             galleryId: 2

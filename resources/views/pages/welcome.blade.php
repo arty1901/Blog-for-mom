@@ -6,13 +6,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="images/project_images/carusel1_img.jpg" height="700px" alt="First slide">
+                <img class="d-block w-100" src="images/project_images/main_carousel/1.jpg" height="700px" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/project_images/carusel2_img.jpg" height="700px" alt="Second slide">
+                <img class="d-block w-100" src="images/project_images/main_carousel/2.jpg" height="700px" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/project_images/carusel3_img.jpg" height="700px" alt="Third slide">
+                <img class="d-block w-100" src="images/project_images/main_carousel/3.jpg" height="700px" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -25,9 +25,9 @@
         </a>
     </div>
 
-        <div class="row profile_block">
+        <div class="row profile_block block-common-style">
             <div class="col-4">
-                <img src="images/project_images/profile_image.png" height="200px" width="200px" alt="" class="rounded mx-auto d-block">
+                <img src="images/project_images/profile_image.png" alt="" class="rounded mx-auto d-block">
             </div>
             <div class="col-8">
                 <h2 class="text-left">Педагог-психолог</h2>
