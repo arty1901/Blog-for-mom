@@ -11,7 +11,7 @@
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: 'link code'
+            plugins: 'advlist autolink link image lists charmap print preview'
         });
     </script>
 

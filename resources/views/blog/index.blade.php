@@ -20,7 +20,7 @@
                                 <small class="text-muted">{{ date('M j, Y', strtotime($post->created_at)) }}</small>
                             </div>
                             <p class="card-category font-weight-light">{{ $post->category->name }}</p>
-                            <p class="card-text">{{ substr(strip_tags($post->body), 0, 250) }}{{ strlen(strip_tags($post->body)) > 250 ? '...' : '' }}</p>
+                            <p class="card-text">{{ substr(strip_tags($post->body), 0, 70) }}{{ strlen(strip_tags($post->body)) > 10 ? "..." : "" }}</p>
                             <div class="container post-meta">
                                 <a href="{{ route('blog.single', $post->slug) }}">Читать далее <i class="fas fa-chevron-right"></i></a>
                                 <small class="text-muted"><i class="far fa-comment"></i> {{ $post->comments()->count() }}</small>
